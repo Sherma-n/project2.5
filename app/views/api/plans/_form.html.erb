@@ -1,0 +1,12 @@
+<%= form_for @plan do |f| %>
+  <% if @plan.errors.any? %>
+    <% @plan.errors.messages.each do |k, v| %>
+      <h2><%= "#{k.capitalize}: #{v}" %></h2>
+    <% end %>
+  <% end %>
+
+  <label>Title:</label>
+  <%= f.text_field :title %>
+
+  <%= f.submit %>
+<% end %>
